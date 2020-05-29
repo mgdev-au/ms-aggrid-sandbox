@@ -1,0 +1,28 @@
+.select__control {
+  min-height: 28px !important;
+  border: none !important;
+}
+.select__control, .select__value-container, .select__indicators {
+  height: 28px !important;
+}
+.select__value-container, .select__indicator {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+.select__indicator-separator {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+.select__single-value + div, .select__placeholder + div {
+  margin: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+.select__menu {
+  position: fixed !important;
+  max-width: 900px;
+  box-shadow: none !important;
+}
+.select__option {
+  padding: 2px 12px !important;
+}
