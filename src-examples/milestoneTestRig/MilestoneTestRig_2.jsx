@@ -20,6 +20,7 @@ import "./MilestoneTestRig.css";
 import "./react-select.css";
 
 import MSAgDropdownCellEditor from './MSAgDropdownCellEditorLite';
+import MSTableDatePickerEditor from './MSTableDatePickerEditor';
 
 export default class MilestoneTestRig_2 extends Component {
   constructor(props) {
@@ -39,6 +40,16 @@ export default class MilestoneTestRig_2 extends Component {
           getColId: function getColId(){return 'make'},
         },          
         { field: 'model' },
+        {
+          field: 'Date',
+          cellEditor: 'MSTableDatePickerEditor',
+          cellEditorParams: {
+            rowId: 'pControl_Id',
+            showDatePicker: 'DD[-]MMM[-]YYYY',
+            showTimePicker: false,
+            valueFormat: 'yyyyMMdd'
+          }
+        },
         {
           field: 'price',
           cellEditor: 'numericCellEditor',
@@ -64,6 +75,7 @@ export default class MilestoneTestRig_2 extends Component {
       },
       frameworkComponents: { 
         msAgDropdownCellEditor: MSAgDropdownCellEditor, //React Editors
+        MSTableDatePickerEditor: MSTableDatePickerEditor,
       },
       // editType: 'fullRow',
       rowData: getRowData(),
@@ -179,6 +191,7 @@ function getRowData() {
     rowData.push({
       make: 'Toyota',
       model: 'Celica',
+      // Date: new Date(),
       price: 35000 + i * 1000,
       field5: 'Sample 22',
       field6: 'Sample 23',
@@ -186,6 +199,7 @@ function getRowData() {
     rowData.push({
       make: 'Ford',
       model: 'Mondeo',
+      // Date: new Date(),
       price: 32000 + i * 1000,
       field5: 'Sample 24',
       field6: 'Sample 25',
@@ -193,6 +207,7 @@ function getRowData() {
     rowData.push({
       make: 'Porsche',
       model: 'Boxter',
+      // Date: new Date(),
       price: 72000 + i * 1000,
       field5: 'Sample 26',
       field6: 'Sample 27',

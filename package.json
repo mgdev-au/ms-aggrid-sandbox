@@ -74,6 +74,9 @@
     "react-router-dom": "5.0.0",
     "react-select": "3.0.8",
     "react-virtualized": "9.21.2",
-    "redux": "4.0.1"
+    "redux": "4.0.1",
+    "moment": "^2.22.2",
+    "react-datetime": "^2.14.0",
+    "styled-components": "^5.1.1"
   }
 }
