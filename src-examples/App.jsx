@@ -7,7 +7,10 @@ import SimpleReduxDynamicExample from "./simpleReduxDynamicComponentExample/Simp
 import SimpleReduxHookExample from "./simpleReduxHooksExample/SimpleReduxHookExample";
 import MilestoneTestRig from "./milestoneTestRig/MilestoneTestRig";
 import MilestoneTestRig_2 from "./milestoneTestRig/MilestoneTestRig_2";
-// import MilestoneTestRig_3 from "./milestoneTestRig/MilestoneTestRig_3";
+import MilestoneTestRig_3 from "./milestoneTestRig/MilestoneTestRig_3";
+import MilestoneTestRig_4 from "./milestoneTestRig/MilestoneTestRig_4";
+import MilestoneTestRig_5 from "./milestoneTestRig/MilestoneTestRig_5";
+// import MilestoneTestRig_MGTable from "./milestoneTestRig/MilestoneTestRig_MGTable";
 
 const SideBar = () => (
     <div style={{float: "left", width: 335, marginRight: 25}}>
@@ -21,8 +24,10 @@ const SideBar = () => (
         <h3>Milestone Samples</h3>    
         <ul className="nav nav-pills">
             <NavItem to='/milestone-aggrid'>Milestone - agGrid Sample (Declarative)</NavItem>
-            <NavItem to='/milestone-aggrid2'>Milestone - agGrid Sample</NavItem>
-            {/* <NavItem to='/milestone-mgtable'>Milestone - MGTable Sample</NavItem> */}
+            <NavItem to='/milestone-aggrid2'>Milestone - agGrid Sample (Edge Editors)</NavItem>
+            <NavItem to='/milestone-aggrid3'>Milestone - agGrid Sample (Master/Detail Grid)</NavItem>
+            <NavItem to='/milestone-aggrid4'>Milestone - agGrid Sample (Master/Detail Grid Nesting)</NavItem>
+            <NavItem to='/milestone-aggrid5'>Milestone - agGrid Sample (Master/Detail Custom)</NavItem>
        </ul>
     </div>
 );
@@ -40,7 +45,10 @@ class App extends Component {
                         <Route exact path='/simple-redux-hook' component={SimpleReduxHookExample}/>
                         <Route exact path='/milestone-aggrid' component={MilestoneTestRig}/>
                         <Route exact path='/milestone-aggrid2' component={MilestoneTestRig_2}/>
-                        {/* <Route exact path='/milestone-mgtable' component={MilestoneTestRig_3}/> */}
+                        <Route exact path='/milestone-aggrid3' component={MilestoneTestRig_3}/>
+                        <Route exact path='/milestone-aggrid4' component={MilestoneTestRig_4}/>
+                        <Route exact path='/milestone-aggrid5' component={MilestoneTestRig_5}/>
+                        {/* <Route exact path='/milestone-mgtable' component={MilestoneTestRig_MGTable}/> */}
                     </Switch>
                 </div>
             </div>

@@ -13,7 +13,7 @@ const StyledTableDatePicker= styled(Datetime)`
     border-radius: 0;
   }
   .rdtPicker {
-    position: fixed !important;
+    position: fixed;
     ${({showDropdownAtTop}) => `${showDropdownAtTop?'bottom':'top'}:100%;`}
     box-shadow: 0px 6px 12px;
   }
@@ -176,6 +176,7 @@ export default class MSTableDatePickerEditor extends React.PureComponent {
         dateType={colDef.rendererType}
         isTimeViewMode={this.viewMode === 'time'}
         onViewModeChange={this.onViewModeChange}
+        className={'ag-custom-component-popup'}
         closeOnTab
       />
     );
