@@ -20,6 +20,7 @@ import "./MilestoneTestRig.css";
 import "./react-select.css";
 
 import MSAgDropdownCellEditor from './MSAgDropdownCellEditorLite';
+import MSAgDropdownCellRenderer from './MSAgDropdownCellRenderer';
 import MSTableDatePickerEditor from './MSTableDatePickerEditor';
 
 export default class MilestoneTestRig_2 extends Component {
@@ -31,12 +32,13 @@ export default class MilestoneTestRig_2 extends Component {
       columnDefs: [
         {
           field: 'make',
-          cellEditor: 'msAgDropdownCellEditor',
+          cellEditor: 'MSAgDropdownCellEditor',
           cellEditorParams: {
             getDropdownOptions: this.getDropdownOptions,
             // values: ['Porsche', 'Toyota', 'Ford', 'AAA', 'BBB', 'CCC'],
             values: [],
           },
+          cellRenderer: 'MSAgDropdownCellRenderer',
           getColId: function getColId(){return 'make'},
         },          
         { field: 'model' },
@@ -74,8 +76,9 @@ export default class MilestoneTestRig_2 extends Component {
         numericCellEditor: getNumericCellEditor(), //Plain JavaScript Editors
       },
       frameworkComponents: { 
-        msAgDropdownCellEditor: MSAgDropdownCellEditor, //React Editors
-        MSTableDatePickerEditor: MSTableDatePickerEditor,
+        MSAgDropdownCellEditor, //React Editors
+        MSTableDatePickerEditor,
+        MSAgDropdownCellRenderer
       },
       // editType: 'fullRow',
       rowData: getRowData(),

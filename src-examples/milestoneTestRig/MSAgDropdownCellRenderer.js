@@ -1,5 +1,5 @@
 import React from 'react';
-import { formatLookUp } from 'Format.js';
+import { formatLookUp } from './FormatLite.js';
 
 export default class MSAgDropdownCellRenderer extends React.Component {
   constructor(props) {
