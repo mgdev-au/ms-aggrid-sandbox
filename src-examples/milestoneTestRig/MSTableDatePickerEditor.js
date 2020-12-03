@@ -16,7 +16,7 @@ const StyledTableDatePicker= styled(Datetime)`
     border-radius: 0;
   }
   .rdtPicker {
-    position: fixed;
+    //position: fixed; //not reqd when isPopup returns true
     ${({showDropdownAtTop}) => `${showDropdownAtTop?'bottom':'top'}:100%;`}
     box-shadow: 0px 6px 12px;
   }
@@ -74,18 +74,11 @@ export default class MSTableDatePickerEditor extends React.PureComponent {
         showDropdownAtTop: true,
       });
     }
-
-
-    //.rdtPicker
-    const rdtPickerDOM = ReactDOM.findDOMNode(this).getElementsByClassName('rdtPicker');
-    //agGrid support - all custom popup editors should set this class
-    //https://www.ag-grid.com/javascript-grid-filter-component/#custom-filters-containing-a-popup-element
-    rdtPickerDOM?.[0].classList.add('ag-custom-component-popup');
   }
 
 
   isPopup() {
-    return false;
+    return true;
   }
 
   afterGuiAttached() {
@@ -104,7 +97,7 @@ export default class MSTableDatePickerEditor extends React.PureComponent {
   prepareDateTimeFactoryAgGrid(params){
     const { value, isTimeOnly, valueFormat, isISOString } = params;
     let dateValue, result = value;
-  
+
     if(value) {
       //stop passing around moment object!
       if (moment.isMoment(value)) {
@@ -186,9 +179,9 @@ export default class MSTableDatePickerEditor extends React.PureComponent {
         dateType={colDef.rendererType}
         isTimeViewMode={this.viewMode === 'time'}
         onViewModeChange={this.onViewModeChange}
-        //this won't work as the class is not on the popup
+        //agGrid support - all custom popup editors should set this class
+        //https://www.ag-grid.com/javascript-grid-filter-component/#custom-filters-containing-a-popup-element
         className={'ag-custom-component-popup'}
-        ref={'datepicker'}
         closeOnTab
       />
     );
