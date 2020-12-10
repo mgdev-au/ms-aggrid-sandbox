@@ -41,7 +41,15 @@ export default class MilestoneTestRig_2 extends Component {
           cellRenderer: 'MSAgDropdownCellRenderer',
           getColId: function getColId(){return 'make'},
         },          
-        { field: 'model' },
+        {
+          field: 'model',
+          cellEditor : 'agRichSelectCellEditor',
+          cellEditorParams: {
+            values: ['Celica', 'Mondeo', 'Boxter'],
+          },
+          cellRenderer: 'MSAgDropdownCellRenderer',
+          getColId: function getColId(){return 'model'},
+        },
         {
           field: 'Date',
           cellEditor: 'MSTableDatePickerEditor',

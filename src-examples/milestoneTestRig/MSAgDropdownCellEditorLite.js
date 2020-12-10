@@ -2,8 +2,9 @@ import React from 'react';
 import Select, { createFilter } from 'react-select';
 import { List } from 'react-virtualized';
 import _ from 'lodash';
-// import { sanitizeColumn } from 'AgGridUtil.js';
+// import ReactDOM from 'react-dom';
 
+// import { sanitizeColumn } from 'AgGridUtil.js';
 // import styled from 'styled-components';
 
 export default class MSAgDropdownCellEditor extends React.Component {
@@ -31,6 +32,15 @@ export default class MSAgDropdownCellEditor extends React.Component {
       });
       this.ref?.select?.focus();
     });
+
+    // const selectDOM = ReactDOM.findDOMNode(this).getElementsByClassName('select__control');
+    //agGrid support - all custom popup editors should set this class
+    //https://www.ag-grid.com/javascript-grid-filter-component/#custom-filters-containing-a-popup-element
+    // selectDOM?.[0].classList.add('ag-custom-component-popup');
+  }
+
+  isPopup() {
+    return false; //true messes up select component
   }
 
   afterGuiAttached() {
