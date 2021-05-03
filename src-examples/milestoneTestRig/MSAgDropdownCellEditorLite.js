@@ -2,10 +2,17 @@ import React from 'react';
 import Select, { createFilter } from 'react-select';
 import { List } from 'react-virtualized';
 import _ from 'lodash';
-// import ReactDOM from 'react-dom';
+import styled from 'styled-components';
+import ReactDOM from 'react-dom';
 
 // import { sanitizeColumn } from 'AgGridUtil.js';
-// import styled from 'styled-components';
+
+const StyledSelect =  styled(Select)`
+  .select__menu{
+    position: relative !important;
+    top: 0
+  }
+`;
 
 export default class MSAgDropdownCellEditor extends React.Component {
   constructor(props) {
@@ -33,14 +40,14 @@ export default class MSAgDropdownCellEditor extends React.Component {
       this.ref?.select?.focus();
     });
 
-    // const selectDOM = ReactDOM.findDOMNode(this).getElementsByClassName('select__control');
-    //agGrid support - all custom popup editors should set this class
-    //https://www.ag-grid.com/javascript-grid-filter-component/#custom-filters-containing-a-popup-element
+    // const selectDOM = ReactDOM.findDOMNode(this).getElementsByClassName('select__menu ');
+    // //agGrid support - all custom popup editors should set this class
+    // //https://www.ag-grid.com/javascript-grid-filter-component/#custom-filters-containing-a-popup-element
     // selectDOM?.[0].classList.add('ag-custom-component-popup');
   }
 
   isPopup() {
-    return false; //true messes up select component
+    return true; //true messes up select component
   }
 
   afterGuiAttached() {
@@ -98,9 +105,9 @@ export default class MSAgDropdownCellEditor extends React.Component {
     const options= this.state.data;
     const ref = this.ref;
     return (
-      <Select
+      <StyledSelect
         ref={_ref => this.ref = _ref}
-        className={'basic-single ag-custom-component-popup'} //as suggested by agGrid Support
+        className={'basic-single ag-custom-component-popup'}
         classNamePrefix={'select'}
         name={this.props.column.getColId()}
         isSearchable

@@ -11,6 +11,7 @@ import MilestoneTestRig_3 from "./milestoneTestRig/MilestoneTestRig_3";
 import MilestoneTestRig_4 from "./milestoneTestRig/MilestoneTestRig_4";
 import MilestoneTestRig_5 from "./milestoneTestRig/MilestoneTestRig_5";
 // import MilestoneTestRig_MGTable from "./milestoneTestRig/MilestoneTestRig_MGTable";
+import MilestoneTestRig_PredefGrouping from "./milestoneTestRig/MilestoneTestRig_PredefGrouping";
 
 const SideBar = () => (
     <div style={{float: "left", width: 335, marginRight: 25}}>
@@ -25,10 +26,15 @@ const SideBar = () => (
         <ul className="nav nav-pills">
             <NavItem to='/milestone-aggrid'>Milestone - agGrid Sample (Declarative)</NavItem>
             <NavItem to='/milestone-aggrid2'>Milestone - agGrid Sample (Edge Editors)</NavItem>
-            <NavItem to='/milestone-aggrid3'>Milestone - agGrid Sample (Master/Detail Grid)</NavItem>
-            <NavItem to='/milestone-aggrid4'>Milestone - agGrid Sample (Master/Detail Grid Nesting)</NavItem>
-            <NavItem to='/milestone-aggrid5'>Milestone - agGrid Sample (Master/Detail Custom)</NavItem>
        </ul>
+      <hr/>
+      <h3>Milestone PoC</h3>
+      <ul className="nav nav-pills">
+        <NavItem to='/milestone-aggrid3'>Milestone - agGrid Sample (Master/Detail Grid)</NavItem>
+        <NavItem to='/milestone-aggrid4'>Milestone - agGrid Sample (Master/Detail Grid Nesting)</NavItem>
+        <NavItem to='/milestone-aggrid5'>Milestone - agGrid Sample (Master/Detail Custom)</NavItem>
+        <NavItem to='/milestone_pregrouping'>Milestone - agGrid Sample (PreDef Grouping)</NavItem>
+      </ul>
     </div>
 );
 
@@ -49,6 +55,7 @@ class App extends Component {
                         <Route exact path='/milestone-aggrid4' component={MilestoneTestRig_4}/>
                         <Route exact path='/milestone-aggrid5' component={MilestoneTestRig_5}/>
                         {/* <Route exact path='/milestone-mgtable' component={MilestoneTestRig_MGTable}/> */}
+                        <Route exact path='/milestone_pregrouping' component={MilestoneTestRig_PredefGrouping}/>
                     </Switch>
                 </div>
             </div>
